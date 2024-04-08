@@ -12,7 +12,14 @@ public class MakeBallAct : MonoBehaviour
     // Start is called before the first frame update
     void Start() // 함수 정의: 함수명 {...코드 집합...}
     {
-        
+        // 반복해서(repeating) 시작(invoke)
+        InvokeRepeating("makeBall", 1.0f, 2.0f); // 1번 변수: 함수명 문자열; 2번 변수: 시작 시간(초); 3번 변수: 반복 주기(초)
+    }
+
+    // 내가 만든 함수: "makeBall"과 같은 이름으로 정의
+    void makeBall()
+    {
+
     }
 
     // Update is called once per frame
