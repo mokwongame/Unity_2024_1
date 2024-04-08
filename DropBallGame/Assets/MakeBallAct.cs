@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 코드 작성  -> 코드의 집합체 = 함수 -> 여러 함수를 관리 -> 변수와 함수의 집합체 = 클래스 -> 여러 클래스의 집합체 = 프레임워크, 네임스페이스(namespace)
+
+// 클래스(class: 객체의 설계도): 보통 대문자로 시작
+// 인스턴스(instance: 클래스가 실행된 결과, 쉽게 보면 클래스의 변수): 보통 소문자로 시작
+
 // 클래스 정의: class 클래스명 {...변수, 함수 집합...}
 public class MakeBallAct : MonoBehaviour
 {
@@ -19,7 +24,10 @@ public class MakeBallAct : MonoBehaviour
     // 내가 만든 함수: "makeBall"과 같은 이름으로 정의
     void makeBall()
     {
-
+        // 인스턴스(instance) 만들기(instantiate)
+        // 현재 게임 오브젝트의 Transform이 만든 인스턴스가 transform
+        // . 의미: 클래스의 멤버(변수, 함수)에 접근하는 기호
+        Instantiate(ball, transform.position, transform.rotation);
     }
 
     // Update is called once per frame
