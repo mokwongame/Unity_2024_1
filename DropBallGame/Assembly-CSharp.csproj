@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\MakeBallAct.cs" />
     <Compile Include="Assets\InputBallAct.cs" />
+    <Compile Include="Assets\KillBallAct.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -39,6 +39,10 @@ public class InputBallAct : MonoBehaviour
             if (colorIndex >= colorSize) colorIndex = 0; // 5보다 크거나 같으면 0으로 설정
             cubeRend.material.color = getColor();
         }
+        else if (Input.GetKeyDown(KeyCode.Escape)) // 이스케이프 키 눌러서 게임 종료
+        {
+            Application.Quit(); // 게임 앱(app, application)을 종료(quit)
+        }
     }
 
     void makeBall()
