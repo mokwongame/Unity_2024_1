@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     bool bCanMakeBall = true; // 공을 만들 수 있는 상태
+    int score = 0; // 득점
 
     // Start is called before the first frame update
     void Start()
@@ -25,4 +26,8 @@ public class GameManager : MonoBehaviour
     {
         bCanMakeBall = bCanMake;
     }
+
+    public int getScore() { return score; }
+    public void setScore(int newScore) { score = newScore; }
+    public void incScore() { score++; } // 1점을 증가
 }

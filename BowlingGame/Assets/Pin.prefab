@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4849581460089332637}
   - component: {fileID: 5558375770835043783}
   - component: {fileID: 5674797175808131769}
+  - component: {fileID: 2850415296898121060}
   m_Layer: 0
   m_Name: Pin
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,3 +138,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2850415296898121060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193917063029047351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f2dde4d2aa4c4491dbbee75126e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
