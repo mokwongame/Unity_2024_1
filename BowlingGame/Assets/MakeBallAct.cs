@@ -6,6 +6,8 @@ public class MakeBallAct : MonoBehaviour
 {
     public GameObject ball;
     GameManager gameManager;
+    int colorIndex = 0;
+    Renderer rendBall = null; // 생성한 공의 Renderer 인스턴스
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +25,27 @@ public class MakeBallAct : MonoBehaviour
             makeBall();
             gameManager.setMakeBall(false); // 공을 만들 수 없게 함
         }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            colorIndex++;
+            if (colorIndex >= gameManager.getColorSize()) colorIndex = 0;
+            // 공이 생기지 않은 경우(rendBall이 null)는 색깔 변경 생략
+            if (rendBall != null) rendBall.material.color = gameManager.getColor(colorIndex);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            colorIndex--;
+            //if (colorIndex < 0) colorIndex = 7;
+            if (colorIndex < 0) colorIndex = gameManager.getColorSize() - 1;
+            // 공이 생기지 않은 경우(rendBall이 null)는 색깔 변경 생략
+            if (rendBall != null) rendBall.material.color = gameManager.getColor(colorIndex);
+        }
     }
 
     void makeBall()
     {
-        Instantiate(ball, transform.position, transform.rotation);
+        GameObject newBall = Instantiate(ball, transform.position, transform.rotation);
+        rendBall = newBall.GetComponent<Renderer>();
+        rendBall.material.color = gameManager.getColor(colorIndex);
     }
 }

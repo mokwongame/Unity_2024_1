@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public int getScore() { return score; }
     public void setScore(int newScore) { score = newScore; }
     public void incScore() { score++; } // 1점을 증가
+    public void incBestScore() { score += 10; } // 10점을 증가
 
     public int getColorSize() { return 8; }
 

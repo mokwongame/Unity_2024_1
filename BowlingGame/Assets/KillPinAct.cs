@@ -30,9 +30,20 @@ public class KillPinAct : MonoBehaviour
         string objName = collision.gameObject.tag; // string은 문자열(string) 클래스
         if (!bHit && objName == "Ball") // 충돌(bHit)이 아니고(!), 그리고(&&) 태그가 Ball인 게임 오브젝트와 충돌하면
         {
+            Color ballColor = collision.gameObject.GetComponent<Renderer>().material.color;
+            Color pinColor = gameObject.GetComponent<Renderer>().material.color; ;
             bHit = true; ; // 충돌 했음
-            print("hit"); // print()는 디버깅용 문자열 출력
-            gameManager.incScore(); // 1점 증가
+            if (ballColor == pinColor) // 색깔이 같은 경우
+            {
+                print("best hit"); // print()는 디버깅용 문자열 출력
+                gameManager.incBestScore(); // 10점 증가
+            }
+            else // 그외: 같은 경우 반대 = 다른 경우
+            {
+                print("hit"); // print()는 디버깅용 문자열 출력
+                gameManager.incScore(); // 1점 증가
+            }
+
             print("score = " + gameManager.getScore()); // 디버깅용 득점 출력
             Destroy(gameObject, 0.5f); // 0.5초 뒤에 현재 핀을 파괴
         }
