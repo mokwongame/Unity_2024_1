@@ -34,6 +34,7 @@ public class KillPinAct : MonoBehaviour
             print("hit"); // print()는 디버깅용 문자열 출력
             gameManager.incScore(); // 1점 증가
             print("score = " + gameManager.getScore()); // 디버깅용 득점 출력
+            Destroy(gameObject, 0.5f); // 0.5초 뒤에 현재 핀을 파괴
         }
     }
 }

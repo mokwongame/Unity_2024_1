@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public void setScore(int newScore) { score = newScore; }
     public void incScore() { score++; } // 1점을 증가
 
+    public int getColorSize() { return 8; }
+
     public Color getColor(int colorIndex)
     {
         // switch 구문은 if, else 구문을 간소화시킴
@@ -46,5 +48,12 @@ public class GameManager : MonoBehaviour
             case 7: return Color.black;
             default: return Color.black;
         }
+    }
+
+    public Color getRandomColor()
+    {
+        //int colorIndex = Random.Range(0, 8); // 0, 1, 2,..., 7(8-1) 범위의 난수 생성
+        int colorIndex = Random.Range(0, getColorSize());
+        return getColor(colorIndex);
     }
 }

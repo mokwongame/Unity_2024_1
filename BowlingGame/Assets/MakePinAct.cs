@@ -5,10 +5,12 @@ using UnityEngine;
 public class MakePinAct : MonoBehaviour
 {
     public GameObject pin;
+    GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
         InvokeRepeating("makePin", 1.0f, 5.0f);
     }
 
@@ -27,6 +29,8 @@ public class MakePinAct : MonoBehaviour
         vector3.z = Random.Range(-5.0f, 10.0f); // 전후
         // transform은 현재 게임 오브젝트인 PinPosition이 실행된 Transform
         //Instantiate(pin, transform.position, transform.rotation);
-        Instantiate(pin, vector3, transform.rotation); // 3차원의 무작위 위치는 vector3에 저장됨
+        GameObject newPin = Instantiate(pin, vector3, transform.rotation); // 3차원의 무작위 위치는 vector3에 저장됨
+        Renderer rend = newPin.GetComponent<Renderer>();
+        rend.material.color = gameManager.getRandomColor();
     }
 }
