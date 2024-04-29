@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "볼링 공 재생성 기능 추가"
+git commit -m "볼링 핀을 자동으로 생성"
 git push -u origin master
