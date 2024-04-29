@@ -30,4 +30,21 @@ public class GameManager : MonoBehaviour
     public int getScore() { return score; }
     public void setScore(int newScore) { score = newScore; }
     public void incScore() { score++; } // 1점을 증가
+
+    public Color getColor(int colorIndex)
+    {
+        // switch 구문은 if, else 구문을 간소화시킴
+        switch (colorIndex)
+        {
+            case 0: return Color.red; // if (colorIndex == 0) {...}
+            case 1: return Color.green;
+            case 2: return Color.blue;
+            case 3: return Color.magenta;
+            case 4: return Color.yellow;
+            case 5: return Color.cyan;
+            case 6: return Color.white;
+            case 7: return Color.black;
+            default: return Color.black;
+        }
+    }
 }

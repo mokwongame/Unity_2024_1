@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "볼링 공과 핀의 충돌 처리"
+git commit -m "볼링 핀을 무작위로 생성"
 git push -u origin master
