@@ -17,7 +17,7 @@ public class NewGameAct : MonoBehaviour
 
     }
 
-    void startGame()
+    public void startGame()
     {
         SceneManager.LoadScene("BowlingGame"); // 게임 씬을 BowlingGame으로 변경
     }
