@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public TMP_Text textScore;
     bool bCanMakeBall = true; // 공을 만들 수 있는 상태
     int score = 0; // 득점
 
@@ -29,8 +31,16 @@ public class GameManager : MonoBehaviour
 
     public int getScore() { return score; }
     public void setScore(int newScore) { score = newScore; }
-    public void incScore() { score++; } // 1점을 증가
-    public void incBestScore() { score += 10; } // 10점을 증가
+    public void incScore() // 1점을 증가
+    {
+        score++;
+        showScore();
+    }
+    public void incBestScore() // 10점을 증가
+    {
+        score += 10;
+        showScore();
+    }
 
     public int getColorSize() { return 8; }
 
@@ -56,5 +66,10 @@ public class GameManager : MonoBehaviour
         //int colorIndex = Random.Range(0, 8); // 0, 1, 2,..., 7(8-1) 범위의 난수 생성
         int colorIndex = Random.Range(0, getColorSize());
         return getColor(colorIndex);
+    }
+
+    public void showScore()
+    {
+        textScore.text = score.ToString(); // ToString(): int를 string으로 변경
     }
 }
