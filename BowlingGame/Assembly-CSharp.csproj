@@ -67,6 +67,7 @@
     <Compile Include="Assets\MakeBallAct.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\RollBallAct.cs" />
+    <Compile Include="Assets\EndGameAct.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

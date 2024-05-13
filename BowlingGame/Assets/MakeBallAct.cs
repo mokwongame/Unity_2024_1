@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MakeBallAct : MonoBehaviour
 {
@@ -39,6 +40,10 @@ public class MakeBallAct : MonoBehaviour
             if (colorIndex < 0) colorIndex = gameManager.getColorSize() - 1;
             // 공이 생기지 않은 경우(rendBall이 null)는 색깔 변경 생략
             if (rendBall != null) rendBall.material.color = gameManager.getColor(colorIndex);
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("EndGame");
         }
     }
 
