@@ -6,15 +6,17 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public AudioClip clipShot;
+    public AudioClip clipStartGameVoice;
     public TMP_Text textScore;
     bool bCanMakeBall = true; // 공을 만들 수 있는 상태
     int score = 0; // 득점
-    AudioSource audioSource;
+    //AudioSource audioSource;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = FindAnyObjectByType<AudioSource>();
+        //audioSource = FindAnyObjectByType<AudioSource>(); // GameManager의 AudioSource를 재활용
     }
 
     // Update is called once per frame
@@ -78,5 +80,10 @@ public class GameManager : MonoBehaviour
     public void playBallShot()
     {
         audioSource.PlayOneShot(clipShot, 1.0f); // clipShot: MP3 파일이 연결될 AudioClip; 1.0f: 소리를 100%로 연주
+    }
+
+    public void playStartGameVoice()
+    {
+        audioSource.PlayOneShot(clipStartGameVoice, 1.0f);
     }
 }

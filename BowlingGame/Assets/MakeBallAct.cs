@@ -49,6 +49,7 @@ public class MakeBallAct : MonoBehaviour
 
     void makeBall()
     {
+        gameManager.playStartGameVoice();
         GameObject newBall = Instantiate(ball, transform.position, transform.rotation);
         rendBall = newBall.GetComponent<Renderer>();
         rendBall.material.color = gameManager.getColor(colorIndex);
