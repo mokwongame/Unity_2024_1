@@ -44,5 +44,6 @@ public class RollBallAct : MonoBehaviour
     {
         // Vector3.forward: +z 방향(전방)
         rb.AddForce(Vector3.forward * rollForce * 10.0f); // 현재 rigidbody에 힘을 추가
+        gameManager.playBallShot(); // 공을 굴리면 효과음 연주
     }
 }

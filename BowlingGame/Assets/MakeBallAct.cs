@@ -52,5 +52,6 @@ public class MakeBallAct : MonoBehaviour
         GameObject newBall = Instantiate(ball, transform.position, transform.rotation);
         rendBall = newBall.GetComponent<Renderer>();
         rendBall.material.color = gameManager.getColor(colorIndex);
+        gameManager.playBallShot(); // 공이 생기면 효과음 연주
     }
 }
