@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "유니티 치트쉬트  수정"
+git commit -m "스타 파이트 게임 시작"
 git push -u origin master
