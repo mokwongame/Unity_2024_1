@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "에너미 구현"
+git commit -m "스타 파이트 게임 완성"
 git push -u origin master
